@@ -1,68 +1,177 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Build Status](https://travis-ci.org/santosfrancisco/gatsby-starter-cv.svg?branch=master)](https://travis-ci.org/santosfrancisco/gatsby-starter-cv)
+[![GitHub version](https://badge.fury.io/gh/santosfrancisco%2Fgatsby-starter-cv.svg)](https://badge.fury.io/gh/santosfrancisco%2Fgatsby-starter-cv)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-## Available Scripts
+<p align="center">
+  <a href="https://www.gatsbyjs.org">
+    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+  </a>
+</p>
+<h1 align="center">
+  Gatsby's CV starter
+</h1>
 
-In the project directory, you can run:
+Create your resume in a few minutes with this totally responsive starter using React. Show off your skills, work experiences and activities in github.
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 📷 Preview
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Mobile
 
-### `npm test`
+![Preview mobile](./preview-mobile.gif)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Desktop
 
-### `npm run build`
+![Preview desktop](./preview-desktop.gif)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀 Quick start
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+1.  **Create a Gatsby site.**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    Use the Gatsby CLI to create a new site, specifying the default starter.
 
-### `npm run eject`
+    ```sh
+    # create a new Gatsby site using the default starter
+    npx gatsby new my-default-starter https://github.com/santosfrancisco/gatsby-starter-cv
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1.  **Start developing.**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    Navigate into your new site’s directory and start it up.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    ```sh
+    cd my-default-starter/
+    npm run develop
+    ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1.  **Open the source code and start editing!**
 
-## Learn More
+    Your site is now running at `http://localhost:8000`!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    \_Note: You'll also see a second link: `http://localhost:8000/___graphql`. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql).\_
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
-### Code Splitting
+1. **Generate production build**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+  That command will generate a production build on _public_ folder
+  ```sh
+    npm run build
+  ```
 
-### Analyzing the Bundle Size
+## Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Update the configuration file with your data. The configuration file is in ```data/siteConfig.js```
 
-### Making a Progressive Web App
+:warning: NOTE: Please change googleAnalyticsId to your ID.  See https://analytics.google.com for details.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+> **Skills** is a set of your personal skills and their respective levels ranging from > 0 to 100.
+> **jobs** is a set of your work experiences
 
-### Advanced Configuration
+```js
+module.exports = {
+  siteTitle: 'Francisco Santos',
+  siteDescription: `Create your online curriculum in just a few minutes with this starter`,
+  authorName: 'Francisco Santos',
+  twitterUsername: '_franciscodf',
+  githubUsername: 'santosfrancisco',
+  authorAvatar: '/images/avatar.jpeg',
+  authorDescription: `Developer, passionate about what I do. Always interested in how the sites were made, I started to study HTML by hobby. <br />
+  In 2012 I started working as a support technician and I approached the developers.
+  In 2015, I started to study C # and started to contribute with the team giving maintenance in an application in C # and .NET. <br />
+  I currently work as a frontend developer and mainly work with <strong>Javascript, NodeJS e React.</strong>`,
+  skills: [
+    {
+      name: 'HTML',
+      level: 70
+    },
+    {
+      name: 'CSS',
+      level: 60
+    },
+    {
+      name: 'Javascript',
+      level: 50
+    },
+    {
+      name: 'NodeJs',
+      level: 40
+    },
+    {
+      name: 'React',
+      level: 60
+    },### 
+    {
+      name: 'Git',
+      level: 70
+    }
+  ],
+  jobs: [
+    {
+      company: "Lendico",
+      begin: {
+        month: 'apr',
+        year: '2018'
+      },
+      duration: null,
+      occupation: "Frontend developer",
+      description: "I integrate the Frontend team responsible for developing and maintaining the online lending platform."
+  
+    }, {
+      company: "Anapro",
+      begin: {
+        month: 'dec',
+        year: '2016'
+      },
+      duration: '1 yr e 5 mos',
+      occupation: "Fullstack developer",
+      description: "Development and maintenance, corrective and preventive, of web applications for the real estate market."
+    }, {
+      company: "Anapro",
+      begin: {
+        month: 'set',
+        year: '2012'
+      },
+      duration: '4 yrs e 3 mos',
+      occupation: "Support Technician",
+      description: "Responsible for the implementation and parameterization of the system, training and customer support. Acting also in person in real estate launches guaranteeing the success and good use of the tool."
+  
+    },
+    /* ... */
+  ],
+  portifolio: [
+    {
+      image: "/images/gatsby-starter-cv.png",
+      description: "Gatsby starter CV template",
+      url: "https://www.gatsbyjs.org/starters/santosfrancisco/gatsby-starter-cv/"
+    },
+    {
+      image: "/images/awesome-grid.png",
+      description: "Responsive grid for ReactJS",
+      url: "https://github.com/santosfrancisco/react-awesome-styled-grid"
+    },
+    /* more portifolio items here */
+  ],
+  social: {
+    twitter: "https://twitter.com/_franciscodf",
+    linkedin: "https://www.linkedin.com/in/santos-francisco",
+    github: "https://github.com/santosfrancisco",
+    email: "yoshi.df@gmail.com"
+  },
+  siteUrl: 'https://santosfrancisco.github.io/gatsby-starter-cv',
+  pathPrefix: '/gatsby-starter-cv', // Note: it must *not* have a trailing slash.
+  siteCover: '/images/cover.jpeg',
+  googleAnalyticsId: 'UA-000000000-1',
+  background_color: '#ffffff',
+  theme_color: '#25303B',
+  display: 'minimal-ui',
+  icon: 'src/assets/gatsby-icon.png',
+  headerLinks: [
+    {
+      label: 'Francisco Santos',
+      url: '/',
+    }
+  ]
+}
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```
